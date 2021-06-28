@@ -33,3 +33,12 @@ footer {
     background-color: #FAF0EA;
     padding: 10px;
 }
+
+#character-attribute-images {
+    display: flex;
+    flex-direction: row;
+}
+
+img {
+    max-width: 15vw;
+}
