@@ -28,9 +28,9 @@ for (let i = 0; i < inputs.length; i++) {
                           + (parseInt(intelligenceValue.value) || 0)
                           + (parseInt(empathyValue.value) || 0)
                           + (parseInt(luckValue.value) || 0);
-        allottedSoFarDiv.textContent = `You have allotted ${allottedSoFarValue} points so far`;
-      });
-  }
+    allottedSoFarDiv.textContent = `You have allotted ${allottedSoFarValue} points so far`;
+    });
+}
 
 submitValues.addEventListener('click', () => {
     if (allottedSoFarValue < 50) {
@@ -38,11 +38,11 @@ submitValues.addEventListener('click', () => {
     } else if (allottedSoFarValue > 50) {
         errorMessage.textContent = `Oh no! You've allotted too many points! Time to make some tough decisions.`;
     } else {
-        strengthImage.src = getStrength(strength.value);
-        speedImage.src = getSpeed(speed.value);
-        intelligenceImage.src = getIntelligence(intelligence.value);
-        empathyImage.src = getEmpathy(empathy.value);
-        luckImage.src = getLuck(luck.value);
+        strengthImage.src = getStrength(strengthValue.value);
+        speedImage.src = getSpeed(speedValue.value);
+        intelligenceImage.src = getIntelligence(intelligenceValue.value);
+        empathyImage.src = getEmpathy(empathyValue.value);
+        luckImage.src = getLuck(luckValue.value);
         errorMessage.textContent = '';
     }
 });
