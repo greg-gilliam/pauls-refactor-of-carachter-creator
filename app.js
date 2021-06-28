@@ -28,7 +28,7 @@ for (let i = 0; i < inputs.length; i++) {
                           + (parseInt(intelligenceValue.value) || 0)
                           + (parseInt(empathyValue.value) || 0)
                           + (parseInt(luckValue.value) || 0);
-    allottedSoFarDiv.textContent = `You have allotted ${allottedSoFarValue} points so far`;
+        allottedSoFarDiv.textContent = `You have allotted ${allottedSoFarValue} points so far`;
     });
 }
 
