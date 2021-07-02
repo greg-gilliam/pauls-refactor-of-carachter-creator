@@ -20,15 +20,15 @@ let allottedSoFarDiv = document.getElementById('allotted-so-far');
 let errorMessage = document.getElementById('error-message');
 
 let submitValues = document.getElementById('submit-values');
-let attributes = ['strength', 'intelligence', 'speed', 'empathy', 'luck'];
+let attributes = [[strength, 'strength'], [intelligence, 'intelligence'], [speed, 'speed'], [empathy, 'empathy'], [luck, 'luck']];
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('change', () => {
-        allottedSoFarValue = (parseInt(strengthValue.value) || 0)
-                          + (parseInt(speedValue.value) || 0)
-                          + (parseInt(intelligenceValue.value) || 0)
-                          + (parseInt(empathyValue.value) || 0)
-                          + (parseInt(luckValue.value) || 0);
+        allottedSoFarValue = (parseInt(strength.value) || 0)
+                          + (parseInt(speed.value) || 0)
+                          + (parseInt(intelligence.value) || 0)
+                          + (parseInt(empathy.value) || 0)
+                          + (parseInt(luck.value) || 0);
         allottedSoFarDiv.textContent = `You have allotted ${allottedSoFarValue} points so far`;
     });
 }
@@ -45,7 +45,7 @@ submitValues.addEventListener('click', () => {
         // empathyImage.src = getEmpathy(empathyValue.value);
         // luckImage.src = getLuck(luckValue.value);
         for (let i = 0; i < attributes.length; i++) {
-            getImage(attributes[i], attributes[i].value);
+            getImage(attributes[i][0].value, attributes[i][1]);
         }
     }
 
