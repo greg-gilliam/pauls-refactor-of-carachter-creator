@@ -2,11 +2,11 @@
 import { getStrength, getSpeed, getIntelligence, getEmpathy, getLuck } from './get-images.js';
 
 // reference needed DOM elements
-let strengthValue = document.getElementById('strength');
-let speedValue = document.getElementById('speed');
-let intelligenceValue = document.getElementById('intelligence');
-let empathyValue = document.getElementById('empathy');
-let luckValue = document.getElementById('luck');
+let strength = document.getElementById('strength');
+let speed = document.getElementById('speed');
+let intelligence = document.getElementById('intelligence');
+let empathy = document.getElementById('empathy');
+let luck = document.getElementById('luck');
 
 let strengthImage = document.getElementById('strength-image');
 let speedImage = document.getElementById('speed-image');
@@ -20,6 +20,7 @@ let allottedSoFarDiv = document.getElementById('allotted-so-far');
 let errorMessage = document.getElementById('error-message');
 
 let submitValues = document.getElementById('submit-values');
+let attributes = ['strength', 'intelligence', 'speed', 'empathy', 'luck'];
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('change', () => {
@@ -38,13 +39,16 @@ submitValues.addEventListener('click', () => {
     } else if (allottedSoFarValue > 50) {
         errorMessage.textContent = `Oh no! You've allotted too many points! Time to make some tough decisions.`;
     } else {
-        strengthImage.src = getStrength(strengthValue.value);
-        speedImage.src = getSpeed(speedValue.value);
-        intelligenceImage.src = getIntelligence(intelligenceValue.value);
-        empathyImage.src = getEmpathy(empathyValue.value);
-        luckImage.src = getLuck(luckValue.value);
-        errorMessage.textContent = '';
+        // strengthImage.src = getStrength(strengthValue.value);
+        // speedImage.src = getSpeed(speedValue.value);
+        // intelligenceImage.src = getIntelligence(intelligenceValue.value);
+        // empathyImage.src = getEmpathy(empathyValue.value);
+        // luckImage.src = getLuck(luckValue.value);
+        for (let i = 0; i < attributes.length; i++) {
+            getImage(attributes[i], attributes[i].value);
+        }
     }
+
 });
 
   // get user input(s)
