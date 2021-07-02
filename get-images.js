@@ -1,4 +1,4 @@
-export function getStrength(int) {
+function getStrength(int) {
     if (int <= 7) {
         return './assets/llama.svg';
     } else if (int <= 14) {
@@ -8,7 +8,7 @@ export function getStrength(int) {
     }
 }
 
-export function getSpeed(int) {
+function getSpeed(int) {
     if (int <= 7) {
         return './assets/llama.svg';
     } else if (int <= 14) {
@@ -18,7 +18,7 @@ export function getSpeed(int) {
     }
 }
 
-export function getIntelligence(int) {
+function getIntelligence(int) {
     if (int <= 7) {
         return './assets/llama.svg';
     } else if (int <= 14) {
@@ -28,7 +28,7 @@ export function getIntelligence(int) {
     }
 }
 
-export function getEmpathy(int) {
+function getEmpathy(int) {
     if (int <= 7) {
         return './assets/llama.svg';
     } else if (int <= 14) {
@@ -38,12 +38,26 @@ export function getEmpathy(int) {
     }
 }
 
-export function getLuck(int) {
+function getLuck(int) {
     if (int <= 7) {
         return './assets/llama.svg';
     } else if (int <= 14) {
         return './assets/wolf.svg';
     } else {
         return './assets/rat.svg';
+    }
+}
+
+export function getImage(number, attribute) {
+    if (attribute === 'strength') {
+        return getStrength(number);
+    } else if (attribute === 'speed') {
+        return getSpeed(number);
+    } else if (attribute === 'intelligence') {
+        return getIntelligence(number);
+    } else if (attribute === 'empathy') {
+        return getEmpathy(number);
+    } else if (attribute === 'luck') {
+        return getLuck(number);
     }
 }
