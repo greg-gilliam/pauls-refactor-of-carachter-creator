@@ -1,5 +1,5 @@
 // import functions
-import { getStrength, getSpeed, getIntelligence, getEmpathy, getLuck } from './get-images.js';
+import { getImage } from './get-images.js';
 
 // reference needed DOM elements
 let strength = document.getElementById('strength');
@@ -20,7 +20,13 @@ let allottedSoFarDiv = document.getElementById('allotted-so-far');
 let errorMessage = document.getElementById('error-message');
 
 let submitValues = document.getElementById('submit-values');
-let attributes = [[strength, 'strength'], [intelligence, 'intelligence'], [speed, 'speed'], [empathy, 'empathy'], [luck, 'luck']];
+let attributes = [
+    [strength, 'strength', strengthImage], 
+    [intelligence, 'intelligence', intelligenceImage], 
+    [speed, 'speed', speedImage], 
+    [empathy, 'empathy', empathyImage], 
+    [luck, 'luck', luckImage]
+];
 
 for (let i = 0; i < inputs.length; i++) {
     inputs[i].addEventListener('change', () => {
@@ -44,8 +50,10 @@ submitValues.addEventListener('click', () => {
         // intelligenceImage.src = getIntelligence(intelligenceValue.value);
         // empathyImage.src = getEmpathy(empathyValue.value);
         // luckImage.src = getLuck(luckValue.value);
+        let imagePath; 
         for (let i = 0; i < attributes.length; i++) {
-            getImage(attributes[i][0].value, attributes[i][1]);
+            imagePath = getImage(attributes[i][0].value, attributes[i][1]);
+            attributes[i][2].src = imagePath;
         }
     }
 
