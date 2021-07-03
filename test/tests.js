@@ -1,6 +1,6 @@
 // IMPORT MODULES under test here:
 // import { add } from '../calculator.js';
-import { getImage } from '../get-images.js';
+import { getImage, getSpeed } from '../get-images.js';
 
 const test = QUnit.test;
 
@@ -22,5 +22,15 @@ test('time to test a function', (expect) => {
 test('test getImage function', (expect) => {
     const expected = './assets/penguin.svg';
     const actual = getImage(12, 'empathy');
+    expect.equal(actual, expected);
+});
+test('test getImage function', (expect) =>{
+    const expected = './assets/bear.svg';
+    const actual = getImage(20, 'strength');
+    expect.equal(actual, expected);
+});
+test('getSpeed', (expect) =>{
+    const expected = './assets/llama.svg';
+    const actual = getSpeed(5);
     expect.equal(actual, expected);
 });
