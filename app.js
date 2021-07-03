@@ -45,11 +45,6 @@ submitValues.addEventListener('click', () => {
     } else if (allottedSoFarValue > 50) {
         errorMessage.textContent = `Oh no! You've allotted too many points! Time to make some tough decisions.`;
     } else {
-        // strengthImage.src = getStrength(strengthValue.value);
-        // speedImage.src = getSpeed(speedValue.value);
-        // intelligenceImage.src = getIntelligence(intelligenceValue.value);
-        // empathyImage.src = getEmpathy(empathyValue.value);
-        // luckImage.src = getLuck(luckValue.value);
         let imagePath; 
         for (let i = 0; i < attributes.length; i++) {
             imagePath = getImage(attributes[i][0].value, attributes[i][1]);
@@ -59,6 +54,4 @@ submitValues.addEventListener('click', () => {
 
 });
 
-  // get user input(s)
-  // do any needed work with the value(s)
-  // update DOM to reflect new value(s)
+

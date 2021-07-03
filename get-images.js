@@ -28,7 +28,7 @@ function getIntelligence(int) {
     }
 }
 
-function getEmpathy(int) {
+export function getEmpathy(int) {
     if (int <= 7) {
         return './assets/llama.svg';
     } else if (int <= 14) {
