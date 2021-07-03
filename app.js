@@ -15,11 +15,11 @@ let empathyImage = document.getElementById('empathy-image');
 let luckImage = document.getElementById('luck-image');
 
 let inputs = Array.from(document.getElementsByTagName('input'));
-let allottedSoFarValue;
 let allottedSoFarDiv = document.getElementById('allotted-so-far');
 let errorMessage = document.getElementById('error-message');
-
 let submitValues = document.getElementById('submit-values');
+
+let allottedSoFarValue;
 let attributes = [
     [strength, 'strength', strengthImage], 
     [intelligence, 'intelligence', intelligenceImage], 
